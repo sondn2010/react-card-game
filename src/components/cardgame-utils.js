@@ -1,5 +1,5 @@
 const utils = {
-  suits: ["Hearts", "Clubs", "Diamonds", "Spades"],
+  suits: ["heart", "club", "diamond", "spade"],
   values: [
     "Ace",
     "King",

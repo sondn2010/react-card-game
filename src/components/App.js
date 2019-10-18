@@ -52,15 +52,19 @@ const CardGame = () => {
 
     if (newPlayerCoin <= 0) {
       setGameStatus({
-        message: "Ha ha haaaa.., stupid man! Get out of here.",
+        message: "Ha ha haaaa.., stupid man. Get away!",
         emo: "danger"
       });
+      setPlayerCards([]);
+      setDealerCards([]);
     }
     if (dealerCoin <= 0) {
       setGameStatus({
         message: "I own you my life, please give me money back.",
         emo: "dark"
       });
+      setPlayerCards([]);
+      setDealerCards([]);
     }
 
     setDealerCoin(newDealerCoin);
@@ -148,9 +152,9 @@ const CardGame = () => {
               playerCoin={playerCoin}
               playerCards={playerCards}
               playerScore={playerScore}
-              playerAvatar="https://www.w3schools.com/w3images/avatar1.png"
+              playerAvatar="/player-avatar.png"
             />
-            {!gameStarted && (
+            {!gameStarted && playerCoin > 0 && dealerCoin > 0 && (
               <GameButton text="Ok, let's play." onClick={onNewClick} />
             )}
             {gameStarted && (
@@ -165,7 +169,7 @@ const CardGame = () => {
               playerCoin={dealerCoin}
               playerCards={dealerCards}
               playerScore={dealerScore}
-              playerAvatar="http://www.newdesignfile.com/postpic/2013/08/cool-gaming-avatars_87678.jpg"
+              playerAvatar="/dealer-avatar.jpg"
             />
             <GameState state={gameStatus} />
           </div>

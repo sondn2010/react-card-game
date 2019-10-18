@@ -9,8 +9,8 @@ const PlayerDisplay = props => {
     <>
       <PlayerCoinDisplay coin={props.playerCoin} />
       <CardPlayerAvatar src={props.playerAvatar} />
-      <PlayerCardsDisplay cards={props.playerCards} />
       <CardPlayerScore score={props.playerScore} />
+      <PlayerCardsDisplay cards={props.playerCards} />
     </>
   );
 };
