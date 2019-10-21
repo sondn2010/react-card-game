@@ -1,13 +1,10 @@
 import React from "react";
+import ImageToggleOnMouseOver from "./ImageToggleOnMouseOver"
 
 const PlayerAvatar = props => {
   return (
     <>
-      <img
-        src={props.src}
-        className="avatar img-fluid img-thumbnail mx-auto d-block"
-        alt="avatar"
-      />
+      <ImageToggleOnMouseOver primaryImg={props.src} alt="something"/>
     </>
   );
 };
