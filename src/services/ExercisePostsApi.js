@@ -4,9 +4,9 @@ const DATA_TIMEOUT = 60*3 // timeout in minutes
 
 const getData = async () =>  {
     var d = new Date();
-    var storage = localStorage.getItem(DATA_STORAGE_KEY);
+    var storage = JSON.parse(localStorage.getItem(DATA_STORAGE_KEY));
     
-    if (storage && storage.requestedTime && storage.requestedTime < d.setMinutes(d.getMinutes() + DATA_TIMEOUT)) {
+    if (storage && storage.requestedTime && storage.requestedTime < (d.setMinutes(d.getMinutes() + DATA_TIMEOUT))) {
         return storage.data;
     }
 
@@ -17,7 +17,7 @@ const getData = async () =>  {
         throw "No data returned.";
     }
 
-    localStorage.setItem(DATA_STORAGE_KEY, JSON.stringify({ requestedTime: d, data: content }))
+    localStorage.setItem(DATA_STORAGE_KEY, JSON.stringify({ requestedTime: d.getTime(), data: content }))
     return content
 };
 

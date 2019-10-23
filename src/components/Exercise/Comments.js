@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { filterData } from '../../services/ExerciseCommentsApi'
+import { filterData } from '../../services/ExercisePostsApi'
 import CommentsList from './CommentsList';
 
 const ExerciseComments = () => {
@@ -15,7 +15,7 @@ const ExerciseComments = () => {
             setData([])
             return;
         }
-        
+
         setIsSearching(true);
         var s = await filterData(val);
         setData(s)
@@ -36,16 +36,16 @@ const ExerciseComments = () => {
                         </form>
                     </div>
                 </nav>
-                {
-                    isSearching && (
-                        <>
-                            <div className="progress">
-                                <div className="progress-bar progress-bar-striped progress-bar-animated progress-bar-full " role="progressbar" ></div>
-                            </div>
-                        </>
-                    )}
+                {isSearching && (
+                    <>
+                        <div className="progress">
+                            <div className="progress-bar progress-bar-striped progress-bar-animated progress-bar-full " role="progressbar" ></div>
+                        </div>
+                    </>
+                )}
 
-                Comments with filter: <b>{searchValue}</b>
+                <div className="row">Filter with: <b>{searchValue}</b></div>
+                
                 <CommentsList comments={data} />
             </div>
         </>

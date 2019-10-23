@@ -4,7 +4,8 @@ import CommentsDetail from './CommentsDetail';
 const CommentsList = props => (
     <>
         {props.comments.map((item, index) => (
-            <CommentsDetail comment={item} key={item.id} />
+            <CommentsDetail key={item.id}
+                comment={item} />
         ))}
     </>
 )
