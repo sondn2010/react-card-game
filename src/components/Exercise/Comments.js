@@ -46,7 +46,7 @@ const ExerciseComments = () => {
 
                 <div className="row">
                     <div className="col-sm">
-                    <p>Found <mark>{data.length}</mark> with keyword <mark>{searchValue}</mark> </p>
+                        <p>Found <strong>{data.length}</strong> result with keyword <strong>{searchValue}</strong> </p>
                     </div>
                 </div>
 
