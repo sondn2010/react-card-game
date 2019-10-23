@@ -44,9 +44,13 @@ const ExerciseComments = () => {
                     </>
                 )}
 
-                <div className="row">Filter with: <b>{searchValue}</b></div>
-                
-                <CommentsList comments={data} />
+                <div className="row">
+                    <div className="col-sm">
+                    <p>Found <mark>{data.length}</mark> with keyword <mark>{searchValue}</mark> </p>
+                    </div>
+                </div>
+
+                <CommentsList comments={data} searchKey={searchValue} />
             </div>
         </>
     )
