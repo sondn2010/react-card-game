@@ -1,12 +1,7 @@
 import React from "react";
-const parse = require('html-react-parser');
+import { highlightFunc} from '../../utils/highlight'
 
-function highlightFunc(content, highlightText) {
-    var
-        pattern = new RegExp(highlightText, 'g'),
-        replaceWith = '<mark>$&</mark>';
-    return content.replace(pattern, replaceWith);
-}
+const parse = require('html-react-parser');
 
 function CommentsDetail(props) {
     return (
