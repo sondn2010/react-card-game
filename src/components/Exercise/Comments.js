@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { filterData } from '../../services/ExercisePostsApi'
+import { filterData } from './services/ExercisePostsApi'
 import CommentsList from './CommentsList';
 
 const ExerciseComments = () => {

@@ -8,11 +8,14 @@ import serialize from 'serialize-javascript';
 import config from 'server/config';
 import { serverRenderer } from 'renderers/server';
 
+import { FileServiceApis } from '../components/Files/FileServiceApis'
+
 const app = express();
 app.enable('trust proxy');
 app.use(morgan('common'));
 
 app.use(express.static('public'));
+//app.use('/static', express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,6 +28,8 @@ try {
 } catch (err) {
   app.locals.gVars = {};
 }
+
+FileServiceApis(app);
 
 app.get('/', async (req, res) => {
   try {

@@ -1,6 +1,4 @@
-
-const DATA_STORAGE_KEY = 'sampleKey'
-const DATA_TIMEOUT = 60*3 // timeout in minutes
+import { DATA_STORAGE_KEY, DATA_TIMEOUT } from '../../const'
 
 const getData = async () =>  {
     var d = new Date();
@@ -11,12 +9,8 @@ const getData = async () =>  {
     }
 
     var res = await fetch(`https://jsonplaceholder.typicode.com/posts`)    
-    var content = await res.json()    
-
-    if (!content) {
-        throw "No data returned.";
-    }
-
+    var content = await res.json()
+    
     localStorage.setItem(DATA_STORAGE_KEY, JSON.stringify({ requestedTime: d.getTime(), data: content }))
     return content
 };

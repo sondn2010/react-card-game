@@ -11,11 +11,7 @@ const getData = async () =>  {
     }
 
     var res = await fetch(`https://jsonplaceholder.typicode.com/albums/1/photos`)    
-    var content = await res.json()    
-
-    if (!content) {
-        throw "No data returned.";
-    }
+    var content = await res.json()
 
     localStorage.setItem(DATA_STORAGE_KEY, JSON.stringify({ requestedTime: d, data: content }))
     return content
