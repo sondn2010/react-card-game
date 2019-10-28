@@ -143,8 +143,6 @@ const CardGame = () => {
 
     return (
         <>
-            <h1 className="text-center">Blackjack</h1>
-
             <div className="container">
                 <div className="row text-center">
                     <div className="col-sm">
