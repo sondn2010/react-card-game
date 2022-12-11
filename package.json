@@ -42,7 +42,7 @@
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "ejs": "^2.7.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "html-react-parser": "^0.9.1",
     "mini-css-extract-plugin": "^0.8.0",
     "morgan": "^1.9.1",
